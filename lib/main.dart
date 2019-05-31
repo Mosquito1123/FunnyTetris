@@ -12,7 +12,6 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-
   bool showSplash = true;
 
   @override
@@ -26,18 +25,15 @@ class MyAppState extends State<MyApp> {
       return SplashPage();
     }
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Tetris",
       home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text("俄罗斯方块"),
-        ),
-        body: new Column(
-          children: <Widget>[
-            new GameView(),
-            new ControllerBar()
-          ],
-        )
-      ),
+          appBar: new AppBar(
+            title: new Text("俄罗斯方块"),
+          ),
+          body: new Column(
+            children: <Widget>[new GameView(), new ControllerBar()],
+          )),
     );
   }
 }
